@@ -1,4 +1,5 @@
 {
+  "externalControllerServices" : { },
   "flow" : {
     "createdTimestamp" : 1722951570825,
     "description" : "",
@@ -7,5 +8,795 @@
     "name" : "Pdf Processing",
     "versionCount" : 0
   },
-  "latest" : false
+  "flowContents" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "ee03aa8b-b753-341b-999b-c464823988b2",
+        "name" : "ChunkText",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "05254d2d-ad46-3ac4-b004-67721b5415e7",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "chunks" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "3bcb7d26-c3e5-37d9-9e33-d1344612615c",
+        "name" : "ChunkDocument",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "b96c7cd7-52e3-35c8-b5d1-ae32b676a69c",
+        "name" : "ParsePdfDocument",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "b3feaede-9776-32f3-982e-8687073b10b8",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "8bbacd31-8518-36bd-ad40-fd48e1a47d25",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "0aa88bcc-fbe5-3071-9009-579147ac44a5",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "8afb3d5d-c4b3-3ccb-98e3-7a34da5f33f3",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "3bcb7d26-c3e5-37d9-9e33-d1344612615c",
+        "name" : "ChunkDocument",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "3059b98f-8bb7-3077-abe8-5842ae843408",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e744da9c-5bb5-349b-b139-7664560fc94e",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "tables", "images" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "b96c7cd7-52e3-35c8-b5d1-ae32b676a69c",
+        "name" : "ParsePdfDocument",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "3bcb7d26-c3e5-37d9-9e33-d1344612615c",
+        "name" : "ChunkDocument",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "12195364-9429-3090-b2d3-8326f5ffde97",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "b96c7cd7-52e3-35c8-b5d1-ae32b676a69c",
+        "name" : "ParsePdfDocument",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "8bbacd31-8518-36bd-ad40-fd48e1a47d25",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "de217f6b-c8ae-36ee-a29a-df55ab29bb7b",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e73c8186-6bb6-3a2a-b381-2c44e9b9a3fa",
+        "name" : "GetFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "29b2e869-8dfb-3069-a424-dce2975bfd50",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "eb0673be-9581-3aec-b88e-4636f071a1c8",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "ee03aa8b-b753-341b-999b-c464823988b2",
+        "name" : "ChunkText",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "b26f898b-bde6-3811-9d0d-faa2008b8425",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "5b4b7ffc-36e7-345d-bfc7-83a94c2cc93a",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "comms.failure", "failure" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "b96c7cd7-52e3-35c8-b5d1-ae32b676a69c",
+        "name" : "ParsePdfDocument",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    } ],
+    "controllerServices" : [ ],
+    "defaultBackPressureDataSizeThreshold" : "1 GB",
+    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultFlowFileExpiration" : "0 sec",
+    "executionEngine" : "INHERITED",
+    "externalControllerServiceReferences" : { },
+    "flowFileConcurrency" : "UNBOUNDED",
+    "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+    "funnels" : [ {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "3059b98f-8bb7-3077-abe8-5842ae843408",
+      "position" : {
+        "x" : 344.0,
+        "y" : 344.0
+      }
+    }, {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "0aa88bcc-fbe5-3071-9009-579147ac44a5",
+      "position" : {
+        "x" : -77.0,
+        "y" : 579.5
+      }
+    }, {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "29b2e869-8dfb-3069-a424-dce2975bfd50",
+      "position" : {
+        "x" : 80.0,
+        "y" : 736.0
+      }
+    }, {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "b26f898b-bde6-3811-9d0d-faa2008b8425",
+      "position" : {
+        "x" : 56.0,
+        "y" : 456.0
+      }
+    } ],
+    "identifier" : "flow-contents-group",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "maxConcurrentTasks" : 1,
+    "name" : "Pdf Processing",
+    "outputPorts" : [ ],
+    "parameterContextName" : "Default Params",
+    "position" : {
+      "x" : 0.0,
+      "y" : 0.0
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0-SNAPSHOT"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e73c8186-6bb6-3a2a-b381-2c44e9b9a3fa",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "GetFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -332.5,
+        "y" : -440.0
+      },
+      "properties" : {
+        "Keep Source File" : "true",
+        "Minimum File Age" : "0 sec",
+        "Polling Interval" : "0 sec",
+        "Input Directory" : "/Users/rfellows/tmp/10Ks",
+        "Batch Size" : "10",
+        "Minimum File Size" : "0 B",
+        "Ignore Hidden Files" : "true",
+        "Recurse Subdirectories" : "true",
+        "File Filter" : "[^\\.].*"
+      },
+      "propertyDescriptors" : {
+        "Keep Source File" : {
+          "displayName" : "Keep Source File",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Keep Source File",
+          "sensitive" : false
+        },
+        "Minimum File Age" : {
+          "displayName" : "Minimum File Age",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Minimum File Age",
+          "sensitive" : false
+        },
+        "Polling Interval" : {
+          "displayName" : "Polling Interval",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Polling Interval",
+          "sensitive" : false
+        },
+        "Input Directory" : {
+          "displayName" : "Input Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Input Directory",
+          "sensitive" : false
+        },
+        "Maximum File Age" : {
+          "displayName" : "Maximum File Age",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Age",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Maximum File Size" : {
+          "displayName" : "Maximum File Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Size",
+          "sensitive" : false
+        },
+        "Minimum File Size" : {
+          "displayName" : "Minimum File Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Minimum File Size",
+          "sensitive" : false
+        },
+        "Ignore Hidden Files" : {
+          "displayName" : "Ignore Hidden Files",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Ignore Hidden Files",
+          "sensitive" : false
+        },
+        "Recurse Subdirectories" : {
+          "displayName" : "Recurse Subdirectories",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Recurse Subdirectories",
+          "sensitive" : false
+        },
+        "File Filter" : {
+          "displayName" : "File Filter",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "File Filter",
+          "sensitive" : false
+        },
+        "Path Filter" : {
+          "displayName" : "Path Filter",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Path Filter",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.GetFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0-SNAPSHOT"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "8bbacd31-8518-36bd-ad40-fd48e1a47d25",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "UpdateAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -328.0,
+        "y" : -160.0
+      },
+      "properties" : {
+        "Store State" : "Do not store state",
+        "canonical-value-lookup-cache-size" : "100",
+        "mime.type" : "application/pdf"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "canonical-value-lookup-cache-size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "canonical-value-lookup-cache-size",
+          "sensitive" : false
+        },
+        "mime.type" : {
+          "displayName" : "mime.type",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "mime.type",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "runtime-document-layout-nar",
+        "group" : "io.datavolo.runtime",
+        "version" : "2024.07.24-SNAPSHOT"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "3bcb7d26-c3e5-37d9-9e33-d1344612615c",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "ChunkDocument",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -680.0,
+        "y" : 416.0
+      },
+      "properties" : {
+        "Include Processing Elements" : "true",
+        "Chunk Overlap" : "200",
+        "Max Chunk Size" : "16000",
+        "Subsection Strategy" : "Separate Subsections",
+        "Chunking Strategy" : "Section"
+      },
+      "propertyDescriptors" : {
+        "Include Processing Elements" : {
+          "displayName" : "Include Processing Elements",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Include Processing Elements",
+          "sensitive" : false
+        },
+        "Chunk Overlap" : {
+          "displayName" : "Chunk Overlap",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Chunk Overlap",
+          "sensitive" : false
+        },
+        "Max Chunk Size" : {
+          "displayName" : "Max Chunk Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Chunk Size",
+          "sensitive" : false
+        },
+        "Subsection Strategy" : {
+          "displayName" : "Subsection Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Subsection Strategy",
+          "sensitive" : false
+        },
+        "Chunking Strategy" : {
+          "displayName" : "Chunking Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Chunking Strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "io.datavolo.runtime.processors.document.layout.ChunkDocument",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "original" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "runtime-chunking-nar",
+        "group" : "io.datavolo.runtime",
+        "version" : "2024.07.24-SNAPSHOT"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "ee03aa8b-b753-341b-999b-c464823988b2",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "ChunkText",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -680.0,
+        "y" : 704.0
+      },
+      "properties" : {
+        "Chunk Delimiters" : "\\n\\n,\\n,., ,",
+        "Language" : "English",
+        "Max Chunk Length" : "4000",
+        "Trim Whitespace" : "true",
+        "Sentence Similarity Threshold" : "0.6",
+        "Chunking Strategy" : "SEMANTIC"
+      },
+      "propertyDescriptors" : {
+        "Chunk Delimiters" : {
+          "displayName" : "Chunk Delimiters",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Chunk Delimiters",
+          "sensitive" : false
+        },
+        "Language" : {
+          "displayName" : "Language",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Language",
+          "sensitive" : false
+        },
+        "Max Chunk Length" : {
+          "displayName" : "Max Chunk Length",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Chunk Length",
+          "sensitive" : false
+        },
+        "Trim Whitespace" : {
+          "displayName" : "Trim Whitespace",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Trim Whitespace",
+          "sensitive" : false
+        },
+        "Sentence Similarity Threshold" : {
+          "displayName" : "Sentence Similarity Threshold",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Sentence Similarity Threshold",
+          "sensitive" : false
+        },
+        "Chunking Strategy" : {
+          "displayName" : "Chunking Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Chunking Strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "25 ms",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "io.datavolo.runtime.processors.chunking.ChunkText",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "runtime-pdf-nar",
+        "group" : "io.datavolo.runtime",
+        "version" : "2024.07.24-SNAPSHOT"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "b96c7cd7-52e3-35c8-b5d1-ae32b676a69c",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "ParsePdfDocument",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -328.0,
+        "y" : 152.0
+      },
+      "properties" : {
+        "Image Embedding Strategy" : "Skip",
+        "Communication Timeout" : "60 sec",
+        "Element Detection Service URL" : "http://localhost:8080",
+        "OCR Service URL" : "http://localhost:8081",
+        "Table Embedding Strategy" : "Skip"
+      },
+      "propertyDescriptors" : {
+        "Image Embedding Strategy" : {
+          "displayName" : "Image Embedding Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Image Embedding Strategy",
+          "sensitive" : false
+        },
+        "Communication Timeout" : {
+          "displayName" : "Communication Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Communication Timeout",
+          "sensitive" : false
+        },
+        "Element Detection Service URL" : {
+          "displayName" : "Element Detection Service URL",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Element Detection Service URL",
+          "sensitive" : false
+        },
+        "OCR Service URL" : {
+          "displayName" : "OCR Service URL",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "OCR Service URL",
+          "sensitive" : false
+        },
+        "Table Embedding Strategy" : {
+          "displayName" : "Table Embedding Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Table Embedding Strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "io.datavolo.runtime.processors.pdf.ParsePdfDocument",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "scheduledState" : "ENABLED",
+    "statelessFlowTimeout" : "1 min"
+  },
+  "flowEncodingVersion" : "1.0",
+  "latest" : false,
+  "parameterContexts" : {
+    "Default Params" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "inheritedParameterContexts" : [ ],
+      "name" : "Default Params",
+      "parameters" : [ {
+        "description" : "",
+        "name" : "Batch Size",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "Github Personal Access Token",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
+        "name" : "bytes",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "15 B"
+      }, {
+        "description" : "",
+        "name" : "Cache Size",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "1000"
+      }, {
+        "description" : "",
+        "name" : "hello",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "Hello!"
+      }, {
+        "description" : "",
+        "name" : "my_pwd",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
+        "name" : "Data Format",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "Text"
+      } ]
+    }
+  },
+  "parameterProviders" : { },
+  "snapshotMetadata" : {
+    "author" : "rob.fellows@gmail.com",
+    "flowIdentifier" : "Pdf-Processing",
+    "timestamp" : 0
+  }
 }
