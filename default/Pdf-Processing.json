@@ -252,7 +252,57 @@
       },
       "zIndex" : 0
     } ],
-    "controllerServices" : [ ],
+    "controllerServices" : [ {
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "runtime-ml-libraries-nar",
+        "group" : "io.datavolo.runtime",
+        "version" : "2024.09.4-SNAPSHOT"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "runtime-ml-libraries-nar",
+          "group" : "io.datavolo.runtime",
+          "version" : "2024.09.4-SNAPSHOT"
+        },
+        "type" : "io.datavolo.runtime.services.ocr.OCRService"
+      } ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e641b63a-abcd-3753-b7a9-8f9a73832216",
+      "name" : "StandardOCRService",
+      "properties" : {
+        "Service URL" : "http://localhost:8081",
+        "OCR Languages" : "ENGLISH",
+        "Communications Timeout" : "60 secs"
+      },
+      "propertyDescriptors" : {
+        "Service URL" : {
+          "displayName" : "Service URL",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Service URL",
+          "sensitive" : false
+        },
+        "OCR Languages" : {
+          "displayName" : "OCR Languages",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "OCR Languages",
+          "sensitive" : false
+        },
+        "Communications Timeout" : {
+          "displayName" : "Communications Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Communications Timeout",
+          "sensitive" : false
+        }
+      },
+      "scheduledState" : "DISABLED",
+      "type" : "io.datavolo.runtime.services.ocr.StandardOCRService"
+    } ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
     "defaultBackPressureObjectThreshold" : 10000,
     "defaultFlowFileExpiration" : "0 sec",
@@ -513,7 +563,7 @@
       "bundle" : {
         "artifact" : "runtime-document-layout-nar",
         "group" : "io.datavolo.runtime",
-        "version" : "2024.07.24-SNAPSHOT"
+        "version" : "2024.09.4-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -588,7 +638,7 @@
       "bundle" : {
         "artifact" : "runtime-chunking-nar",
         "group" : "io.datavolo.runtime",
-        "version" : "2024.07.24-SNAPSHOT"
+        "version" : "2024.09.4-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -671,7 +721,7 @@
       "bundle" : {
         "artifact" : "runtime-pdf-nar",
         "group" : "io.datavolo.runtime",
-        "version" : "2024.07.24-SNAPSHOT"
+        "version" : "2024.09.4-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -689,8 +739,8 @@
       "properties" : {
         "Image Embedding Strategy" : "Skip",
         "Communication Timeout" : "60 sec",
+        "OCR Service" : "e641b63a-abcd-3753-b7a9-8f9a73832216",
         "Element Detection Service URL" : "http://localhost:8080",
-        "OCR Service URL" : "http://localhost:8081",
         "Table Embedding Strategy" : "Skip"
       },
       "propertyDescriptors" : {
@@ -708,18 +758,18 @@
           "name" : "Communication Timeout",
           "sensitive" : false
         },
+        "OCR Service" : {
+          "displayName" : "OCR Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "OCR Service",
+          "sensitive" : false
+        },
         "Element Detection Service URL" : {
           "displayName" : "Element Detection Service URL",
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Element Detection Service URL",
-          "sensitive" : false
-        },
-        "OCR Service URL" : {
-          "displayName" : "OCR Service URL",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "OCR Service URL",
           "sensitive" : false
         },
         "Table Embedding Strategy" : {
@@ -753,6 +803,12 @@
       "name" : "Default Params",
       "parameters" : [ {
         "description" : "",
+        "name" : "Transform Cache Size",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "10 kb"
+      }, {
+        "description" : "",
         "name" : "Batch Size",
         "provided" : false,
         "sensitive" : false
@@ -761,6 +817,11 @@
         "name" : "Github Personal Access Token",
         "provided" : false,
         "sensitive" : true
+      }, {
+        "description" : "test",
+        "name" : "test",
+        "provided" : false,
+        "sensitive" : false
       }, {
         "description" : "",
         "name" : "bytes",
