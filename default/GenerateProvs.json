@@ -19,36 +19,6 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "06271034-d6b9-352f-98a1-a1918c566061",
-        "name" : "UpdateAttribute",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "1a242500-0ea7-338f-9fd9-c97c069aa79c",
-      "labelIndex" : 1,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "merged" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "ed02d9e0-f930-3824-8895-f7cfa86f835f",
-        "name" : "MergeRecord",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
         "id" : "861e8aa1-20ac-31b1-8d2d-f999754b7a63",
         "name" : "FetchFile",
         "type" : "PROCESSOR"
@@ -68,6 +38,36 @@
         "groupId" : "flow-contents-group",
         "id" : "00c4dfc2-8985-3642-9d38-d251aa90a9cd",
         "name" : "ListFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "06271034-d6b9-352f-98a1-a1918c566061",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "1a242500-0ea7-338f-9fd9-c97c069aa79c",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "merged" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "ed02d9e0-f930-3824-8895-f7cfa86f835f",
+        "name" : "MergeRecord",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -139,36 +139,6 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "ddb757bb-6612-3bd3-8724-2ca2c2cf9021",
-        "name" : "PutFile",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "2c6c8aa5-d6d2-3b94-b0a1-6fa21cad6bb3",
-      "labelIndex" : 1,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "06271034-d6b9-352f-98a1-a1918c566061",
-        "name" : "UpdateAttribute",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
         "id" : "ca4bf24c-778f-32fc-a3bf-10606518f342",
         "name" : "Filter Out INFO Level",
         "type" : "PROCESSOR"
@@ -188,6 +158,36 @@
         "groupId" : "flow-contents-group",
         "id" : "4e017453-8b2e-3531-b3c7-1ca304ef8f50",
         "name" : "PartitionRecord",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "ddb757bb-6612-3bd3-8724-2ca2c2cf9021",
+        "name" : "PutFile",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "2c6c8aa5-d6d2-3b94-b0a1-6fa21cad6bb3",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "06271034-d6b9-352f-98a1-a1918c566061",
+        "name" : "UpdateAttribute",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -287,7 +287,7 @@
       "bundle" : {
         "artifact" : "nifi-record-serialization-services-nar",
         "group" : "org.apache.nifi",
-        "version" : "2024.06.27-2"
+        "version" : "2.0.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "CONTROLLER_SERVICE",
@@ -295,7 +295,7 @@
         "bundle" : {
           "artifact" : "nifi-standard-services-api-nar",
           "group" : "org.apache.nifi",
-          "version" : "2024.06.27-2"
+          "version" : "2.0.0-SNAPSHOT"
         },
         "type" : "org.apache.nifi.serialization.RecordSetWriterFactory"
       } ],
@@ -456,7 +456,7 @@
       "bundle" : {
         "artifact" : "nifi-record-serialization-services-nar",
         "group" : "org.apache.nifi",
-        "version" : "2024.06.27-2"
+        "version" : "2.0.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "CONTROLLER_SERVICE",
@@ -464,7 +464,7 @@
         "bundle" : {
           "artifact" : "nifi-standard-services-api-nar",
           "group" : "org.apache.nifi",
-          "version" : "2024.06.27-2"
+          "version" : "2.0.0-SNAPSHOT"
         },
         "type" : "org.apache.nifi.serialization.RecordReaderFactory"
       } ],
@@ -486,7 +486,7 @@
           "name" : "Grok Expression",
           "resourceDefinition" : {
             "cardinality" : "SINGLE",
-            "resourceTypes" : [ "URL", "TEXT", "FILE" ]
+            "resourceTypes" : [ "URL", "FILE", "TEXT" ]
           },
           "sensitive" : false
         },
@@ -504,7 +504,7 @@
           "name" : "Grok Pattern File",
           "resourceDefinition" : {
             "cardinality" : "SINGLE",
-            "resourceTypes" : [ "URL", "TEXT", "FILE" ]
+            "resourceTypes" : [ "URL", "FILE", "TEXT" ]
           },
           "sensitive" : false
         },
@@ -565,14 +565,14 @@
       "bundle" : {
         "artifact" : "nifi-record-serialization-services-nar",
         "group" : "org.apache.nifi",
-        "version" : "2024.06.27-2"
+        "version" : "2.0.0-SNAPSHOT"
       },
       "componentType" : "CONTROLLER_SERVICE",
       "controllerServiceApis" : [ {
         "bundle" : {
           "artifact" : "nifi-standard-services-api-nar",
           "group" : "org.apache.nifi",
-          "version" : "2024.06.27-2"
+          "version" : "2.0.0-SNAPSHOT"
         },
         "type" : "org.apache.nifi.serialization.RecordReaderFactory"
       } ],
@@ -732,7 +732,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2024.06.27-2"
+        "version" : "2.0.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -853,7 +853,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2024.06.27-2"
+        "version" : "2.0.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -912,7 +912,7 @@
       "bundle" : {
         "artifact" : "nifi-update-attribute-nar",
         "group" : "org.apache.nifi",
-        "version" : "2024.06.27-2"
+        "version" : "2.0.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -985,7 +985,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2024.06.27-2"
+        "version" : "2.0.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -1052,7 +1052,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2024.06.27-2"
+        "version" : "2.0.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -1146,7 +1146,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2024.06.27-2"
+        "version" : "2.0.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -1165,7 +1165,7 @@
         "Keep Source File" : "true",
         "Minimum File Age" : "0 sec",
         "Polling Interval" : "0 sec",
-        "Input Directory" : "/opt/runtime/runtime-server/extensions",
+        "Input Directory" : "data",
         "Batch Size" : "10",
         "Minimum File Size" : "0 B",
         "Ignore Hidden Files" : "true",
@@ -1276,7 +1276,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2024.06.27-2"
+        "version" : "2.0.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -1341,7 +1341,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2024.06.27-2"
+        "version" : "2.0.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -1392,7 +1392,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2024.06.27-2"
+        "version" : "2.0.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -1465,7 +1465,7 @@
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : {
-        "background-color" : "#644f02"
+        "background-color" : "#050505"
       },
       "type" : "org.apache.nifi.processors.standard.FetchFile",
       "yieldDuration" : "1 sec"
@@ -1476,7 +1476,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2024.06.27-2"
+        "version" : "2.0.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -1502,7 +1502,7 @@
         "Include File Attributes" : "true",
         "Input Directory Location" : "Local",
         "listing-strategy" : "timestamps",
-        "Input Directory" : "/opt/runtime/runtime-server/conf",
+        "Input Directory" : "data",
         "target-system-timestamp-precision" : "auto-detect",
         "track-performance" : "false",
         "max-performance-metrics" : "100000",
@@ -1687,7 +1687,7 @@
   "parameterContexts" : { },
   "parameterProviders" : { },
   "snapshotMetadata" : {
-    "author" : "rfellows@datavolo.io",
+    "author" : "rob.fellows@gmail.com",
     "flowIdentifier" : "GenerateProvs",
     "timestamp" : 0
   }
