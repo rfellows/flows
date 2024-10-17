@@ -1115,8 +1115,8 @@
       "name" : "ConsumeKafkaRecord_2_6",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 1600.0,
-        "y" : 296.0
+        "x" : 1704.0,
+        "y" : 304.0
       },
       "properties" : { },
       "propertyDescriptors" : {
