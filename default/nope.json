@@ -714,7 +714,7 @@
         "type" : "org.apache.nifi.processors.standard.InvokeHTTP",
         "yieldDuration" : "1 sec"
       }, {
-        "autoTerminatedRelationships" : [ ],
+        "autoTerminatedRelationships" : [ "set state fail", "failure" ],
         "backoffMechanism" : "PENALIZE_FLOWFILE",
         "bulletinLevel" : "WARN",
         "bundle" : {
