@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1730544988562,
+    "description" : "Log in to GHIN, get scores for golfer.",
+    "identifier" : "GHIN",
+    "lastModifiedTimestamp" : 1730544988562,
+    "name" : "GHIN",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
