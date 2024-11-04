@@ -217,22 +217,7 @@
     "funnels" : [ ],
     "identifier" : "flow-contents-group",
     "inputPorts" : [ ],
-    "labels" : [ {
-      "componentType" : "LABEL",
-      "groupIdentifier" : "flow-contents-group",
-      "height" : 192.0,
-      "identifier" : "72e99bde-bd79-3ddc-8cfa-2ca73a7adb16",
-      "label" : "TODO:\n* get response token from attributes in scores pg, use it in next api call to get the scores",
-      "position" : {
-        "x" : -80.0,
-        "y" : -640.0
-      },
-      "style" : {
-        "font-size" : "16px"
-      },
-      "width" : 424.0,
-      "zIndex" : 0
-    } ],
+    "labels" : [ ],
     "maxConcurrentTasks" : 1,
     "name" : "GHIN",
     "outputPorts" : [ ],
@@ -860,13 +845,72 @@
         "name" : "",
         "partitioningAttribute" : "",
         "prioritizers" : [ ],
-        "selectedRelationships" : [ "Response", "Original" ],
+        "selectedRelationships" : [ "Response" ],
         "source" : {
           "comments" : "",
           "groupId" : "ee7385f9-089f-3236-a702-9252645b0640",
           "id" : "9193cac2-6eda-37e0-8af4-6b90462f869e",
           "name" : "InvokeHTTP",
           "type" : "PROCESSOR"
+        },
+        "zIndex" : 0
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "ee7385f9-089f-3236-a702-9252645b0640",
+          "id" : "027ad5ab-5514-3364-9689-9f19ef34a718",
+          "name" : "Funnel",
+          "type" : "FUNNEL"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "ee7385f9-089f-3236-a702-9252645b0640",
+        "identifier" : "50950b2b-9377-3026-965c-9d8ab83f6faa",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "Original" ],
+        "source" : {
+          "comments" : "",
+          "groupId" : "ee7385f9-089f-3236-a702-9252645b0640",
+          "id" : "9193cac2-6eda-37e0-8af4-6b90462f869e",
+          "name" : "InvokeHTTP",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 0
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "groupId" : "ee7385f9-089f-3236-a702-9252645b0640",
+          "id" : "4332efd9-83dd-33b7-a581-8271f293e27c",
+          "name" : "scores_out",
+          "type" : "OUTPUT_PORT"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "ee7385f9-089f-3236-a702-9252645b0640",
+        "identifier" : "577e9812-47c6-36b0-aca6-81790b09b50b",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "" ],
+        "source" : {
+          "comments" : "",
+          "groupId" : "ee7385f9-089f-3236-a702-9252645b0640",
+          "id" : "0973ec18-56ad-3031-a4d0-2a0a9f217f40",
+          "name" : "Funnel",
+          "type" : "FUNNEL"
         },
         "zIndex" : 0
       } ],
@@ -882,15 +926,23 @@
         "groupIdentifier" : "ee7385f9-089f-3236-a702-9252645b0640",
         "identifier" : "0973ec18-56ad-3031-a4d0-2a0a9f217f40",
         "position" : {
-          "x" : 728.0,
-          "y" : -96.0
+          "x" : 232.0,
+          "y" : 32.0
+        }
+      }, {
+        "componentType" : "FUNNEL",
+        "groupIdentifier" : "ee7385f9-089f-3236-a702-9252645b0640",
+        "identifier" : "027ad5ab-5514-3364-9689-9f19ef34a718",
+        "position" : {
+          "x" : 760.0,
+          "y" : -72.0
         }
       }, {
         "componentType" : "FUNNEL",
         "groupIdentifier" : "ee7385f9-089f-3236-a702-9252645b0640",
         "identifier" : "db3de1b4-54bb-34d8-a090-ede282af02eb",
         "position" : {
-          "x" : 712.0,
+          "x" : 752.0,
           "y" : -280.0
         }
       } ],
@@ -913,8 +965,22 @@
       } ],
       "labels" : [ ],
       "maxConcurrentTasks" : 1,
-      "name" : "Get scores for golfer",
-      "outputPorts" : [ ],
+      "name" : "Get last 100 scores for golfer",
+      "outputPorts" : [ {
+        "allowRemoteAccess" : false,
+        "componentType" : "OUTPUT_PORT",
+        "concurrentlySchedulableTaskCount" : 1,
+        "groupIdentifier" : "ee7385f9-089f-3236-a702-9252645b0640",
+        "identifier" : "4332efd9-83dd-33b7-a581-8271f293e27c",
+        "name" : "scores_out",
+        "portFunction" : "STANDARD",
+        "position" : {
+          "x" : 136.0,
+          "y" : 168.0
+        },
+        "scheduledState" : "ENABLED",
+        "type" : "OUTPUT_PORT"
+      } ],
       "parameterContextName" : "GHIN Params",
       "position" : {
         "x" : -536.0,
@@ -950,10 +1016,11 @@
           "HTTP/2 Disabled" : "False",
           "Connection Timeout" : "5 secs",
           "Response Cookie Strategy" : "DISABLED",
+          "Authorization" : "Bearer ${golfer_user_token}",
           "Socket Read Timeout" : "15 secs",
           "Socket Idle Connections" : "5",
           "Request Body Enabled" : "true",
-          "HTTP URL" : "https://api2.ghin.com/api/v1/scores.json?golfer_id=10197241&offset=0&limit=20&statuses=Validated&source=GHINcom",
+          "HTTP URL" : "https://api2.ghin.com/api/v1/scores/get_all.json?golfer_id=${ghin_number}&per_page=100&page=1",
           "Socket Idle Timeout" : "5 mins",
           "Response Redirects Enabled" : "True",
           "Socket Write Timeout" : "15 secs",
@@ -1018,6 +1085,13 @@
             "dynamic" : false,
             "identifiesControllerService" : false,
             "name" : "Response Cookie Strategy",
+            "sensitive" : false
+          },
+          "Authorization" : {
+            "displayName" : "Authorization",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "Authorization",
             "sensitive" : false
           },
           "Request Password" : {
@@ -1458,7 +1532,7 @@
         "name" : "login_success",
         "portFunction" : "STANDARD",
         "position" : {
-          "x" : -880.0,
+          "x" : 336.0,
           "y" : 80.0
         },
         "scheduledState" : "ENABLED",
@@ -1797,6 +1871,7 @@
           "Max String Length" : "20 MB",
           "golfer_user_token" : "$.response.golfer_user.golfer_user_token",
           "Return Type" : "scalar",
+          "ghin_number" : "$.response.golfer_user.golfers[0].ghin_number",
           "Null Value Representation" : "empty string",
           "Path Not Found Behavior" : "ignore"
         },
@@ -1827,6 +1902,13 @@
             "dynamic" : false,
             "identifiesControllerService" : false,
             "name" : "Return Type",
+            "sensitive" : false
+          },
+          "ghin_number" : {
+            "displayName" : "ghin_number",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "ghin_number",
             "sensitive" : false
           },
           "Null Value Representation" : {
