@@ -1,4 +1,5 @@
 {
+  "externalControllerServices" : { },
   "flow" : {
     "createdTimestamp" : 1731951488609,
     "description" : "",
@@ -7,5 +8,103 @@
     "name" : "testsatsdtasd",
     "versionCount" : 0
   },
-  "latest" : false
+  "flowContents" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ ],
+    "controllerServices" : [ ],
+    "defaultBackPressureDataSizeThreshold" : "1 GB",
+    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultFlowFileExpiration" : "0 sec",
+    "executionEngine" : "INHERITED",
+    "externalControllerServiceReferences" : { },
+    "flowFileConcurrency" : "UNBOUNDED",
+    "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+    "funnels" : [ ],
+    "identifier" : "flow-contents-group",
+    "inputPorts" : [ {
+      "allowRemoteAccess" : false,
+      "componentType" : "INPUT_PORT",
+      "concurrentlySchedulableTaskCount" : 1,
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "f42db2cc-0a5e-33bc-ffff-ffff8117d252",
+      "name" : "in",
+      "portFunction" : "STANDARD",
+      "position" : {
+        "x" : -297.5,
+        "y" : -111.0
+      },
+      "scheduledState" : "ENABLED",
+      "type" : "INPUT_PORT"
+    } ],
+    "labels" : [ ],
+    "maxConcurrentTasks" : 1,
+    "name" : "testststst",
+    "outputPorts" : [ ],
+    "parameterContextName" : "Default Params",
+    "position" : {
+      "x" : 0.0,
+      "y" : 0.0
+    },
+    "processGroups" : [ ],
+    "processors" : [ ],
+    "remoteProcessGroups" : [ ],
+    "scheduledState" : "ENABLED",
+    "statelessFlowTimeout" : "1 min"
+  },
+  "flowEncodingVersion" : "1.0",
+  "latest" : false,
+  "parameterContexts" : {
+    "Default Params" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "inheritedParameterContexts" : [ ],
+      "name" : "Default Params",
+      "parameters" : [ {
+        "description" : "",
+        "name" : "Batch Size",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "Github Personal Access Token",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
+        "name" : "bytes",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "15 B"
+      }, {
+        "description" : "",
+        "name" : "Cache Size",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "1000"
+      }, {
+        "description" : "",
+        "name" : "hello",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "Hello!"
+      }, {
+        "description" : "",
+        "name" : "my_pwd",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
+        "name" : "Data Format",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "Text"
+      } ]
+    }
+  },
+  "parameterProviders" : { },
+  "snapshotMetadata" : {
+    "author" : "rfellows",
+    "flowIdentifier" : "testsatsdtasd",
+    "timestamp" : 0
+  }
 }
