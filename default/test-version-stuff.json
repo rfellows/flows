@@ -49,7 +49,7 @@
     } ],
     "controllerServices" : [ ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
-    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultBackPressureObjectThreshold" : 10001,
     "defaultFlowFileExpiration" : "0 sec",
     "executionEngine" : "INHERITED",
     "externalControllerServiceReferences" : {
