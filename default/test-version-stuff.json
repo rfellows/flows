@@ -1,5 +1,10 @@
 {
-  "externalControllerServices" : { },
+  "externalControllerServices" : {
+    "9748216b-3ec7-35e7-9cd8-890bec13bd6a" : {
+      "identifier" : "9748216b-3ec7-35e7-9cd8-890bec13bd6a",
+      "name" : "CSVReader"
+    }
+  },
   "flow" : {
     "createdTimestamp" : 1732298378956,
     "description" : "",
@@ -47,7 +52,12 @@
     "defaultBackPressureObjectThreshold" : 10000,
     "defaultFlowFileExpiration" : "0 sec",
     "executionEngine" : "INHERITED",
-    "externalControllerServiceReferences" : { },
+    "externalControllerServiceReferences" : {
+      "9748216b-3ec7-35e7-9cd8-890bec13bd6a" : {
+        "identifier" : "9748216b-3ec7-35e7-9cd8-890bec13bd6a",
+        "name" : "CSVReader"
+      }
+    },
     "flowFileConcurrency" : "UNBOUNDED",
     "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
     "funnels" : [ {
@@ -78,7 +88,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2.1.0-SNAPSHOT"
+        "version" : "2.2.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -149,6 +159,13 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Request Chunked Transfer-Encoding Enabled",
+          "sensitive" : false
+        },
+        "Response Header Request Attributes Prefix" : {
+          "displayName" : "Response Header Request Attributes Prefix",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Response Header Request Attributes Prefix",
           "sensitive" : false
         },
         "HTTP/2 Disabled" : {
@@ -392,7 +409,7 @@
       "bundle" : {
         "artifact" : "nifi-stateful-analysis-nar",
         "group" : "org.apache.nifi",
-        "version" : "2.1.0-SNAPSHOT"
+        "version" : "2.2.0-SNAPSHOT"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -439,6 +456,64 @@
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
       "type" : "org.apache.nifi.processors.stateful.analysis.AttributeRollingWindow",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.2.0-SNAPSHOT"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "7e71127d-c9ee-3d3d-8e86-9bc871f06ab5",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "ConvertRecord",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -928.0,
+        "y" : -96.0
+      },
+      "properties" : {
+        "Include Zero Record FlowFiles" : "true",
+        "Record Reader" : "9748216b-3ec7-35e7-9cd8-890bec13bd6a"
+      },
+      "propertyDescriptors" : {
+        "Include Zero Record FlowFiles" : {
+          "displayName" : "Include Zero Record FlowFiles",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Include Zero Record FlowFiles",
+          "sensitive" : false
+        },
+        "Record Writer" : {
+          "displayName" : "Record Writer",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Record Writer",
+          "sensitive" : false
+        },
+        "Record Reader" : {
+          "displayName" : "Record Reader",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Record Reader",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.ConvertRecord",
       "yieldDuration" : "1 sec"
     } ],
     "remoteProcessGroups" : [ ],
@@ -546,7 +621,7 @@
   },
   "parameterProviders" : { },
   "snapshotMetadata" : {
-    "author" : "rob.fellows@gmail.com",
+    "author" : "rfellows",
     "flowIdentifier" : "test-version-stuff",
     "timestamp" : 0
   }
