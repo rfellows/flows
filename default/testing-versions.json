@@ -61,7 +61,22 @@
     } ],
     "identifier" : "flow-contents-group",
     "inputPorts" : [ ],
-    "labels" : [ ],
+    "labels" : [ {
+      "componentType" : "LABEL",
+      "groupIdentifier" : "flow-contents-group",
+      "height" : 80.0,
+      "identifier" : "f4d26d2b-3a2f-3672-be5a-5e44d8d6b1c6",
+      "label" : "manually change this flow in github to ensure it isn't valid and will fail when we upgrade to it",
+      "position" : {
+        "x" : -464.0,
+        "y" : -288.0
+      },
+      "style" : {
+        "font-size" : "12px"
+      },
+      "width" : 200.0,
+      "zIndex" : 0
+    } ],
     "maxConcurrentTasks" : 1,
     "name" : "test",
     "outputPorts" : [ ],
@@ -411,8 +426,8 @@
       "name" : "AttributeRollingWindow",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -50.49997239367087,
-        "y" : -104.49999952697408
+        "x" : 80.0,
+        "y" : -184.0
       },
       "properties" : { },
       "propertyDescriptors" : {
