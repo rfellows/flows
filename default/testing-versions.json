@@ -90,8 +90,8 @@
       "name" : "InvokeHTTP",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -504.0,
-        "y" : -176.0
+        "x" : -496.0,
+        "y" : -104.0
       },
       "properties" : {
         "Request Content-Encoding" : "DISABLED",
