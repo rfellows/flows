@@ -426,8 +426,8 @@
       "name" : "GenerateFlowFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 2064.0,
-        "y" : 312.0
+        "x" : 1848.0,
+        "y" : 288.0
       },
       "properties" : {
         "File Size" : "0B",
@@ -516,7 +516,7 @@
       "name" : "ConvertRecord",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 2056.0,
+        "x" : 2248.0,
         "y" : 544.0
       },
       "properties" : {
@@ -679,6 +679,6 @@
   "snapshotMetadata" : {
     "author" : "rob.fellows@gmail.com",
     "flowIdentifier" : "DummyJSON",
-    "timestamp" : 1767623673891
+    "timestamp" : 1767623706535
   }
 }
