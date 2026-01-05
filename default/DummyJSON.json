@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1767623672799,
+    "description" : "testing out a potential bug",
+    "identifier" : "DummyJSON",
+    "lastModifiedTimestamp" : 1767623672799,
+    "name" : "DummyJSON",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
