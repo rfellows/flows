@@ -1,4 +1,5 @@
 {
+  "externalControllerServices" : { },
   "flow" : {
     "createdTimestamp" : 1785511827985,
     "description" : "",
@@ -7,5 +8,338 @@
     "name" : "rebase testing",
     "versionCount" : 0
   },
-  "latest" : false
+  "flowContents" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "23da6e77-cb02-3ddd-8e93-51897ea1e110",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "3263abcc-fc67-30b1-b51c-390ec3719970",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "95ebde8f-6573-3b6d-9105-310cdf57d075",
+        "name" : "GenerateFlowFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 1
+    } ],
+    "controllerServices" : [ ],
+    "defaultBackPressureDataSizeThreshold" : "1 GB",
+    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultFlowFileExpiration" : "0 sec",
+    "executionEngine" : "INHERITED",
+    "externalControllerServiceReferences" : { },
+    "flowFileConcurrency" : "UNBOUNDED",
+    "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+    "funnels" : [ {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "23da6e77-cb02-3ddd-8e93-51897ea1e110",
+      "position" : {
+        "x" : 1218.0,
+        "y" : 555.0
+      }
+    } ],
+    "identifier" : "flow-contents-group",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "maxConcurrentTasks" : 1,
+    "name" : "Rebase testing",
+    "outputPorts" : [ ],
+    "parameterContextName" : "inherited param context",
+    "position" : {
+      "x" : 0.0,
+      "y" : 0.0
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.11.0-SNAPSHOT"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "95ebde8f-6573-3b6d-9105-310cdf57d075",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "GenerateFlowFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 357.0,
+        "y" : 148.0
+      },
+      "properties" : {
+        "File Size" : "0B",
+        "Batch Size" : "1",
+        "Unique FlowFiles" : "false",
+        "Character Set" : "UTF-8",
+        "Data Format" : "Text"
+      },
+      "propertyDescriptors" : {
+        "File Size" : {
+          "displayName" : "File Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "File Size",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Unique FlowFiles" : {
+          "displayName" : "Unique FlowFiles",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Unique FlowFiles",
+          "sensitive" : false
+        },
+        "Mime Type" : {
+          "displayName" : "Mime Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Mime Type",
+          "sensitive" : false
+        },
+        "Custom Text" : {
+          "displayName" : "Custom Text",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Custom Text",
+          "sensitive" : false
+        },
+        "Character Set" : {
+          "displayName" : "Character Set",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Character Set",
+          "sensitive" : false
+        },
+        "Data Format" : {
+          "displayName" : "Data Format",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Data Format",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "1 min",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "scheduledState" : "ENABLED",
+    "statelessFlowTimeout" : "1 min"
+  },
+  "flowEncodingVersion" : "1.0",
+  "latest" : false,
+  "parameterContexts" : {
+    "inherited param context" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "inheritedParameterContexts" : [ "Default Params" ],
+      "name" : "inherited param context",
+      "parameters" : [ {
+        "description" : "",
+        "name" : "Bearer Token",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
+        "name" : "Cache Value Lookup Cache Size",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "100"
+      }, {
+        "description" : "",
+        "name" : "Database Connection URL",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "jdbc://localhost:5432"
+      }, {
+        "description" : "",
+        "name" : "Record Writer",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "268248a8-0193-1000-6122-15e198fc48dd"
+      }, {
+        "description" : "",
+        "name" : "asdfasf",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "the quick brown fox\njumped over the moon",
+        "name" : "asfasdfasdfasdf",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "asdfasdfasfd\nhelm me understand this"
+      }, {
+        "description" : "",
+        "name" : "batch.size",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "3"
+      }, {
+        "description" : "",
+        "name" : "bearer_token",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
+        "name" : "hello",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "Yo Yo Yo"
+      } ]
+    },
+    "Default Params" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "inheritedParameterContexts" : [ ],
+      "name" : "Default Params",
+      "parameters" : [ {
+        "description" : "",
+        "name" : "Batch Size",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "Cache Size",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "1000"
+      }, {
+        "description" : "",
+        "name" : "Cache Value Lookup Cache Size",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "100"
+      }, {
+        "description" : "",
+        "name" : "Data Format",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "Text"
+      }, {
+        "description" : "",
+        "name" : "Date Format",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "yyyy-MM-dd"
+      }, {
+        "description" : "",
+        "name" : "Github Personal Access Token",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
+        "name" : "Max String Length",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "20 MB"
+      }, {
+        "description" : "",
+        "name" : "Transform Cache Size",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "10 kb"
+      }, {
+        "description" : "",
+        "name" : "a really really really really really really really long parameter name a really really really really really really really long parameter name a really really really really really really really long parameter name a really really really really really really really long parameter name a really really really really really really really long parameter name",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "44343"
+      }, {
+        "description" : "",
+        "name" : "aa",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "aa"
+      }, {
+        "description" : "",
+        "name" : "bytes",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "15 B"
+      }, {
+        "description" : "",
+        "name" : "fully qualified domain name",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "true"
+      }, {
+        "description" : "",
+        "name" : "greeting",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "Hey"
+      }, {
+        "description" : "",
+        "name" : "hello",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "Hello"
+      }, {
+        "description" : "",
+        "name" : "my_pwd",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
+        "name" : "some json",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "{\n    \"flowConfiguration\": {\n        \"supportsManagedAuthorizer\": true,\n        \"supportsConfigurableAuthorizer\": true,\n        \"supportsConfigurableUsersAndGroups\": true,\n        \"currentTime\": \"11:50:04 EDT\",\n        \"timeOffset\": -14400000,\n        \"defaultBackPressureObjectThreshold\": 10000,\n        \"defaultBackPressureDataSizeThreshold\": \"1 GB\"\n    }\n}"
+      }, {
+        "description" : "test",
+        "name" : "test",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "test batch size",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "5"
+      } ]
+    }
+  },
+  "parameterProviders" : { },
+  "snapshotMetadata" : {
+    "author" : "rob.fellows@gmail.com",
+    "flowIdentifier" : "rebase-testing",
+    "timestamp" : 1785511829072
+  }
 }
